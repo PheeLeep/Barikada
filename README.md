@@ -36,7 +36,7 @@ you can make a Pull Request to contribute the project and add link to it.
 ## Proof
 
 This is an image before importing the blocklist:
-![Old Screenshot]()
+![Old Screenshot](https://github.com/PheeLeep/Barikada/blob/main/images/screenshot_old.png)
 
 This is an image after import:
-![New Screenshot]()
+![New Screenshot](https://github.com/PheeLeep/Barikada/blob/main/images/screenshot_new.png)
