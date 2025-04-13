@@ -20,7 +20,7 @@ you installed uBlock Origin extension on your browser.
 1. Go to Options Button (three-dot vertical) > Extensions > uBlock Origin
 2. Click the Open the Dashboard (Cog-wheel icon) on the bottom right.
 3. Go to Filter Lists tab > Import, and expand it.
-4. Copy the Link below, and paste it onto text box
+4. Copy the Link below, and paste into the text box
    ```
    https://raw.githubusercontent.com/PheeLeep/Barikada/main/anti_scatter.txt
    ```
