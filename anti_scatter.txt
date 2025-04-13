@@ -1,0 +1,16 @@
+! Title: Barikada Anti Scatter List
+! Description: A blocklist of gambling (or scatter) sites for uBlock Origin
+! Expires: 1 day
+!
+! Repo: https://github.com/PheeLeep/Barikada
+! Issues: https://github.com/PheeLeep/Barikada/issues
+!
+! Feel free to contribute this, if you find scatter sites.
+!
+! :D
+
+||fastwin.ph^
+||www.inplay.ph^
+||bingoplus.ph^
+||bingoplus.com^
+||bingoplus.net^
