@@ -35,8 +35,11 @@ you can make a Pull Request to contribute the project and add link to it.
 
 ## Proof
 
-This is an image before importing the blocklist:
+- This is an image before importing the blocklist:
 ![Old Screenshot](https://github.com/PheeLeep/Barikada/blob/main/images/screenshot_old.png)
 
-This is an image after import:
+- This is an image after import:
 ![New Screenshot](https://github.com/PheeLeep/Barikada/blob/main/images/screenshot_new.png)
+
+- This is an image when a user click Proceed on uBlock Origin:
+![New Screenshot](https://github.com/PheeLeep/Barikada/blob/main/images/screenshot_new_blank.png)
