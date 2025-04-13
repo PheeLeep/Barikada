@@ -32,3 +32,11 @@ the Clock icon right next to "PheeLeep's Barikada Anti-Scatter List".
 ## Contribution
 If you found scatter sites promoted by vloggers on social media sites, or spammed thru SMS messages, 
 you can make a Pull Request to contribute the project and add link to it.
+
+## Proof
+
+This is an image before importing the blocklist:
+![Old Screenshot]()
+
+This is an image after import:
+![New Screenshot]()
