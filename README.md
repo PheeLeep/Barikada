@@ -1,6 +1,6 @@
 # Barikada
 A blocklist of Philippine gambling (or scatter) sites for uBlock Origin, preventing potential
-phishing or malicious attacks and addiction.
+phishing or malicious attacks and addiction, even when attempt to proceed.
 
 This blocklist works on PC and Mobile using uBlock Origin extension, so make sure
 you installed uBlock Origin extension on your browser.
@@ -8,7 +8,7 @@ you installed uBlock Origin extension on your browser.
 ## Importing blocklist on PC
 1. Click the uBlock Origin Extension, and click the Dashboard (Cog-wheel icon) on the bottom right.
 2. Go to Filter Lists tab > Import, and expand it.
-3. Copy the Link below, and paste it onto text box
+3. Copy the Link below, and paste into text box
    ```
    https://raw.githubusercontent.com/PheeLeep/Barikada/main/anti_scatter.txt
    ```
