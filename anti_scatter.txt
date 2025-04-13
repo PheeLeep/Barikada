@@ -50,6 +50,7 @@
 ||thunderbird-onlinecasino.com^$all
 ||thunderbirdasia.com^$all
 ||okadaonlinecasino.com^$all
+||playtime.ph^$all
 
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
@@ -191,3 +192,30 @@
 ||lj7127.cc^$all
 ||lj7128.cc^$all
 ||lj7129.cc^$all
+||jili728.com^$all
+||tmtcash.club^$all
+||36phgolden.cc^$all
+||pinasctr33.cc^$all
+||phparadise33.cc^$all
+||pinasgems35.cc^$all
+||pinasroyale99.cc^$all
+||rahaph36.cc^$all
+||48phwin.club^$all
+||slotfi.game^$all
+||46superph.vip^$all
+||ttjl333.com^$all
+||9ph31.com^$all
+||pinas77.club^$all
+||249slotsph.com^$all
+||qq6660.com^$all
+||35pinasroyale.cc^$all
+||scw168.co^$all
+||108phpark.com^$all
+||54dreamjili.club^$all
+||365jl360.com^$all
+||256phjoin.com^$all
+||fortunemax.cc^$all
+||jljl766.com^$all
+||jilimacvip.cc^$all
+||3jlx7.com^$all
+||winforlife88.com^$all
