@@ -55,6 +55,85 @@
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
 
+# (updated Last May 4, 2025)
+0.0.0.0 googleplay029.jlphslot.top
+0.0.0.0 jlphslot.top
+0.0.0.0 jljlph.xin
+0.0.0.0 747games.ph
+0.0.0.0 phpgames002.135phpgames.cc
+0.0.0.0 135phpgames.cc
+0.0.0.0 h50032.jili551.com
+0.0.0.0 jili551.com
+0.0.0.0 playstore.jiliquest1.com
+0.0.0.0 jiliquest1.com
+0.0.0.0 samsung388.pse.is
+0.0.0.0 pse.is
+0.0.0.0 taya365casino.pro
+0.0.0.0 win888.jljl7.asia
+0.0.0.0 jljl7.asia
+0.0.0.0 rich88.jljl311.com
+0.0.0.0 jljl311.com
+0.0.0.0 playstore.2025moneycoming.com
+0.0.0.0 2025moneycoming.com
+0.0.0.0 phmapalad.com
+0.0.0.0 phmapalad1.com
+0.0.0.0 phmapalad2.com
+0.0.0.0 phmapalad3.com
+0.0.0.0 phmapalad4.com
+0.0.0.0 phmapalad5.com
+0.0.0.0 phmapalad6.com
+0.0.0.0 phmapalad7.com
+0.0.0.0 phmapalad8.com
+0.0.0.0 phmapalad9.com
+0.0.0.0 phmapalad.org
+0.0.0.0 angelph21.ph90a.com
+0.0.0.0 ph90a.com
+0.0.0.0 gkahsdflaf.639club135.cc
+0.0.0.0 639club135.cc
+0.0.0.0 www.7jl44.com
+0.0.0.0 7jl44.com
+0.0.0.0 vip999.103dreamjili.cc
+0.0.0.0 103dreamjili.cc
+0.0.0.0 www.davao2024.vip
+0.0.0.0 davao2024.vip
+0.0.0.0 www.wjpeso.top
+0.0.0.0 wjpeso.top
+0.0.0.0 jilievo.club
+0.0.0.0 panalo300.jl-7dbcc1ihyx12.top
+0.0.0.0 jl-7dbcc1ihyx12.top
+0.0.0.0 www.xn--1-7mbb.xyz
+0.0.0.0 xn--1-7mbb.xyz
+0.0.0.0 free-signup-bonus-ffhp.cash-game.club
+0.0.0.0 cash-game.club
+0.0.0.0 h50052.jili907.com
+0.0.0.0 jili907.com
+0.0.0.0 tt0005.abc8a5.cc
+0.0.0.0 abc8a5.cc
+0.0.0.0 ph.digi-zone.com
+0.0.0.0 digi-zone.com
+0.0.0.0 h500089.jili857.com
+0.0.0.0 jili857.com
+0.0.0.0 www.jili1.cc
+0.0.0.0 jili1.cc
+0.0.0.0 www.jili2.cc
+0.0.0.0 jili2.cc
+0.0.0.0 www.jili3.cc
+0.0.0.0 jili3.cc
+0.0.0.0 www.jili6.cc
+0.0.0.0 jili6.cc
+0.0.0.0 www.jili7.cc
+0.0.0.0 jili7.cc
+0.0.0.0 www.jili9.cc
+0.0.0.0 jili9.cc
+0.0.0.0 phlago0808.com
+0.0.0.0 googleplay77.jljl33fun.xin
+0.0.0.0 jljl33fun.xin
+0.0.0.0 d.jili357.com
+0.0.0.0 jili357.com
+0.0.0.0 www.ph987.net
+0.0.0.0 ph987.net
+
+
 0.0.0.0 phlwin.com.ph
 0.0.0.0 phlwin.com
 0.0.0.0 pesopeso.ph
@@ -217,8 +296,6 @@
 0.0.0.0 jilimacvip.cc
 0.0.0.0 3jlx7.com
 0.0.0.0 winforlife88.com
-
-# (updated Last April 16, 2025)
 0.0.0.0 www.phlago472890.com
 0.0.0.0 phlago472890.com
 0.0.0.0 www.phlago2918.com

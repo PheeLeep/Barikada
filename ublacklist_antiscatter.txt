@@ -57,6 +57,53 @@ name: PheeLeep's Barikada Anti Scatter List
 
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
+# (updated Last May 4, 2025)
+*://*jlphslot.top/*
+*://*jljlph.xin/*
+*://*747games.ph/*
+*://*135phpgames.cc/*
+*://*jili551.com/*
+*://*jiliquest1.com/*
+*://*pse.is/72mnu/*
+*://*taya365casino.pro/*
+*://*jljl7.asia/*
+*://*jljl311.com/*
+*://*2025moneycoming.com/*
+*://*phmapalad.com/*
+*://*phmapalad1.com/*
+*://*phmapalad2.com/*
+*://*phmapalad3.com/*
+*://*phmapalad4.com/*
+*://*phmapalad5.com/*
+*://*phmapalad6.com/*
+*://*phmapalad7.com/*
+*://*phmapalad8.com/*
+*://*phmapalad9.com/*
+*://*phmapalad.org/*
+*://*ph90a.com/*
+*://*639club135.cc/*
+*://*7jl44.com/*
+*://*103dreamjili.cc/*
+*://*davao2024.vip/*
+*://*wjpeso.top/*
+*://*jilievo.club/*
+*://*jl-7dbcc1ihyx12.top/*
+*://*xn--1-7mbb.xyz/*
+*://*cash-game.club/*
+*://*jili907.com/*
+*://*abc8a5.cc/*
+*://*digi-zone.com/*
+*://*jili857.com/*
+*://*jili1.cc/*
+*://*jili2.cc/*
+*://*jili3.cc/*
+*://*jili6.cc/*
+*://*jili7.cc/*
+*://*jili9.cc/*
+*://*phlago0808.com/*
+*://*jljl33fun.xin/*
+*://*jili357.com/*
+*://*ph987.net/*
 
 *://*.phlwin.com.ph/*
 *://*.phlwin.com/*
@@ -220,8 +267,6 @@ name: PheeLeep's Barikada Anti Scatter List
 *://*.jilimacvip.cc/*
 *://*.3jlx7.com/*
 *://*.winforlife88.com/*
-
-# (updated Last April 16, 2025)
 *://*phlago472890.com/*
 *://*phlago2918.com/*
 *://*jackpotph309.com/*
