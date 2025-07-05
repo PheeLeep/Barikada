@@ -55,7 +55,46 @@
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
 
-# (updated Last May 4, 2025)
+# (updated Last July 5, 2025)
+0.0.0.0 753986pnl.com
+0.0.0.0 phrush051568.com
+0.0.0.0 72139pnl.com
+0.0.0.0 boytapang001.37sinagph.cc
+0.0.0.0 37sinagph.cc
+0.0.0.0 2jl.com
+0.0.0.0 www.swn99.online
+0.0.0.0 swn99.online
+0.0.0.0 www.ph958f.vip
+0.0.0.0 ph958f.vip
+0.0.0.0 boytapang01.gogopinas23.cc
+0.0.0.0 gogopinas23.cc
+0.0.0.0 linzi778.639jl42.vip
+0.0.0.0 639jl42.vip
+0.0.0.0 betkoto.net
+0.0.0.0 www.phlbest2510.com
+0.0.0.0 phlbest2510.com
+0.0.0.0 www.phlago383849.com
+0.0.0.0 phlago383849.com
+0.0.0.0 ken008.639jl42.vip
+0.0.0.0 639jl42.vip
+0.0.0.0 639club07.639club86.club
+0.0.0.0 639club86.club
+0.0.0.0 ph8ag3.com
+0.0.0.0 w4lyf.com
+0.0.0.0 rollem88.net
+0.0.0.0 megapanalo.me
+0.0.0.0 primogaming1.ph
+0.0.0.0 primogaming2.ph
+0.0.0.0 primogaming3.ph
+0.0.0.0 primogaming4.ph
+0.0.0.0 primogaming5.ph
+0.0.0.0 primogaming6.ph
+0.0.0.0 primogaming7.ph
+0.0.0.0 primogaming8.ph
+0.0.0.0 primogaming9.ph
+
+
+
 0.0.0.0 googleplay029.jlphslot.top
 0.0.0.0 jlphslot.top
 0.0.0.0 jljlph.xin
