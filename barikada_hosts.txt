@@ -176,7 +176,18 @@
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
 
-# (updated Last July 12, 2025)
+# (updated Last July 16, 2025)
+0.0.0.0 mnl88.com
+0.0.0.0 mnlbet88.com
+0.0.0.0 mnlbet.ph
+0.0.0.0 mnlbet.org
+0.0.0.0 mnlbet.online
+0.0.0.0 mnlbet.app
+0.0.0.0 mnlbet.vip
+0.0.0.0 mnlbet.site
+0.0.0.0 mnlbet.live
+
+
 0.0.0.0 33bet100.com
 0.0.0.0 www.47phfun.vip
 0.0.0.0 47phfun.vip
@@ -185,8 +196,6 @@
 0.0.0.0 paldoplus52100.com
 0.0.0.0 paldoplus29188.com
 0.0.0.0 755pnl.com
-
-
 0.0.0.0 753986pnl.com
 0.0.0.0 phrush051568.com
 0.0.0.0 72139pnl.com
