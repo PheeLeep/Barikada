@@ -60,7 +60,6 @@
 ||luckyi.com^$all
 ||kingclub.com^$all
 ||tongitstok.com^$all
-||com.ph^$all
 ||patokbet.com^$all
 ||okbet.com^$all
 ||hawkgaming.com^$all

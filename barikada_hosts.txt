@@ -68,7 +68,6 @@
 0.0.0.0 kingclub.com
 0.0.0.0 tongitstok.com
 0.0.0.0 www.casinomaxx.com.ph
-0.0.0.0 com.ph
 0.0.0.0 www.patokbet.com
 0.0.0.0 patokbet.com
 0.0.0.0 www.okbet.com
