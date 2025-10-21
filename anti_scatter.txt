@@ -120,12 +120,12 @@
 ||karera.live^$all
 ||megafunalo.com^$all
 
-
-
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
 
-! (updated Last July 16, 2025)
+! (updated Last October 21, 2025)
+||pleasecall.top^$all
+
 ||mnl88.com^$all
 ||mnlbet88.com^$all
 ||mnlbet.ph^$all
