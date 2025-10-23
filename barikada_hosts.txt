@@ -190,6 +190,12 @@
 0.0.0.0 gbet9.com
 0.0.0.0 vc3721.online
 0.0.0.0 jilipg90.com
+0.0.0.0 jilipg2.com
+0.0.0.0 777jilipg.com
+0.0.0.0 888jilipg.com
+0.0.0.0 jilipg-ph.com
+0.0.0.0 jilipg.app
+0.0.0.0 jilipg.me
 
 0.0.0.0 pleasecall.top
 0.0.0.0 mnl88.com

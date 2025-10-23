@@ -138,6 +138,12 @@
 ||gbet9.com^$all
 ||vc3721.online^$all
 ||jilipg90.com^$all
+||jilipg2.com^$all
+||777jilipg.com^$all
+||888jilipg.com^$all
+||jilipg-ph.com^$all
+||jilipg.app^$all
+||jilipg.me^$all
 
 ||pleasecall.top^$all
 ||mnl88.com^$all
