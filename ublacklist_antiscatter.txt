@@ -125,9 +125,23 @@ name: PheeLeep's Barikada Anti Scatter List
 
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
-# (updated Last October 21, 2025)
-*://*pleasecall.top/*
+# (updated Last October 23, 2025)
+*://*gtaya.com/*
+*://*www9085.co/*
+*://*008804.com/*
+*://*gbet1.com/*
+*://*gbet2.com/*
+*://*gbet3.com/*
+*://*gbet4.com/*
+*://*gbet5.com/*
+*://*gbet6.com/*
+*://*gbet7.com/*
+*://*gbet8.com/*
+*://*gbet9.com/*
+*://*vc3721.online/*
+*://*jilipg90.com/*
 
+*://*pleasecall.top/*
 *://*mnl88.com/*
 *://*mnlbet88.com/*
 *://*mnlbet.ph/*
@@ -137,9 +151,6 @@ name: PheeLeep's Barikada Anti Scatter List
 *://*mnlbet.vip/*
 *://*mnlbet.site/*
 *://*mnlbet.live/*
-
-
-
 *://*33bet100.com/*
 *://*47phfun.vip/*
 *://*jilistormcn.com/*

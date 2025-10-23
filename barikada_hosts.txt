@@ -176,8 +176,22 @@
 # POGO (Philippine Offshore Gaming Operation) related.
 
 # (updated Last October 21, 2025)
-0.0.0.0 pleasecall.top
+0.0.0.0 gtaya.com
+0.0.0.0 www9085.co
+0.0.0.0 008804.com
+0.0.0.0 gbet1.com
+0.0.0.0 gbet2.com
+0.0.0.0 gbet3.com
+0.0.0.0 gbet4.com
+0.0.0.0 gbet5.com
+0.0.0.0 gbet6.com
+0.0.0.0 gbet7.com
+0.0.0.0 gbet8.com
+0.0.0.0 gbet9.com
+0.0.0.0 vc3721.online
+0.0.0.0 jilipg90.com
 
+0.0.0.0 pleasecall.top
 0.0.0.0 mnl88.com
 0.0.0.0 mnlbet88.com
 0.0.0.0 mnlbet.ph
@@ -187,8 +201,6 @@
 0.0.0.0 mnlbet.vip
 0.0.0.0 mnlbet.site
 0.0.0.0 mnlbet.live
-
-
 0.0.0.0 33bet100.com
 0.0.0.0 www.47phfun.vip
 0.0.0.0 47phfun.vip

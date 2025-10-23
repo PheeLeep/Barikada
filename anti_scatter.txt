@@ -123,9 +123,23 @@
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
 
-! (updated Last October 21, 2025)
-||pleasecall.top^$all
+! (updated Last October 23, 2025)
+||gtaya.com^$all
+||www9085.co^$all
+||008804.com^$all
+||gbet1.com^$all
+||gbet2.com^$all
+||gbet3.com^$all
+||gbet4.com^$all
+||gbet5.com^$all
+||gbet6.com^$all
+||gbet7.com^$all
+||gbet8.com^$all
+||gbet9.com^$all
+||vc3721.online^$all
+||jilipg90.com^$all
 
+||pleasecall.top^$all
 ||mnl88.com^$all
 ||mnlbet88.com^$all
 ||mnlbet.ph^$all
@@ -135,9 +149,6 @@
 ||mnlbet.vip^$all
 ||mnlbet.site^$all
 ||mnlbet.live^$all
-
-
-
 ||33bet100.com^$all
 ||47phfun.vip^$all
 ||jilistormcn.com^$all
