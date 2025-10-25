@@ -123,7 +123,12 @@
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
 
-! (updated Last October 23, 2025)
+! (updated Last October 25, 2025)
+||ph369tp.com^$all
+||reebet88.vip^$all
+||jl128share.com^$all
+||jl128.com^$all
+
 ||gtaya.com^$all
 ||www9085.co^$all
 ||008804.com^$all
@@ -144,7 +149,6 @@
 ||jilipg-ph.com^$all
 ||jilipg.app^$all
 ||jilipg.me^$all
-
 ||pleasecall.top^$all
 ||mnl88.com^$all
 ||mnlbet88.com^$all
