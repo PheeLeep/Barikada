@@ -13,6 +13,7 @@ name: PheeLeep's Barikada Anti Scatter List
 # :D
 
 # Known PH Gambling Sites (PAGCOR-regulated)
+# Updated last July 18, 2026
 
 *://*.fastwin.ph/*
 *://*.inplay.ph/*
@@ -121,9 +122,6 @@ name: PheeLeep's Barikada Anti Scatter List
 *://*.casinomaxx.ph/*
 *://*.karera.live/*
 *://*.megafunalo.com/*
-
-# PAGCOR "List of Service Providers and Registered Domains" (as of 18 March 2025)
-
 *://*.123go.com/*
 *://*.1play.ph/*
 *://*.747.live/*
@@ -417,6 +415,17 @@ name: PheeLeep's Barikada Anti Scatter List
 *://*.wwwgamefun.ph/*
 *://*.wzr.ph/*
 *://*.xoplay.ph/*
+*://*.hannonline.ph/*
+*://*.fbmplay.com/*
+*://*.okadaplay.com/*
+*://*.ninogaming.com/*
+*://*.wilyonaryo.com/*
+*://*.luckytayasports.com/*
+*://*.mgame.ph/*
+*://*.luckyworld.ph/*
+*://*.blucky.ph/*
+*://*.pin77.com/*
+*://*.megabet-paradise.com/*
 
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.

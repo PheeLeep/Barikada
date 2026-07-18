@@ -10,6 +10,7 @@
 ! :D
 
 ! Known PH Gambling Sites (PAGCOR-regulated)
+! Updated Last July 18, 2026
 
 ||fastwin.ph^$all
 ||inplay.ph^$all
@@ -119,9 +120,6 @@
 ||casinomaxx.ph^$all
 ||karera.live^$all
 ||megafunalo.com^$all
-
-! PAGCOR "List of Service Providers and Registered Domains" (as of 18 March 2025)
-
 ||123go.com^$all
 ||1play.ph^$all
 ||747.live^$all
@@ -415,6 +413,17 @@
 ||wwwgamefun.ph^$all
 ||wzr.ph^$all
 ||xoplay.ph^$all
+||hannonline.ph^$all
+||fbmplay.com^$all
+||okadaplay.com^$all
+||ninogaming.com^$all
+||wilyonaryo.com^$all
+||luckytayasports.com^$all
+||mgame.ph^$all
+||luckyworld.ph^$all
+||blucky.ph^$all
+||pin77.com^$all
+||megabet-paradise.com^$all
 
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
