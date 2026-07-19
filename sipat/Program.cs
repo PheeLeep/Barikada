@@ -25,10 +25,12 @@ public static class Program
             () => run = () => PagcorCommand.RunAsync(
                 RepoRoot(),
                 pagcor.GetValue<int>("--concurrency"),
-                pagcor.GetValue<bool>("--missing-only")),
+                pagcor.GetValue<bool>("--missing-only"),
+                pagcor.GetValue<bool>("--refresh")),
             "Report PAGCOR-approved operators that Barikada does not block yet.");
         pagcor.AddArgument(["--concurrency", "-c"], "N", "Parallel redirect lookups.", 16);
         pagcor.AddArgument(["--missing-only", "-m"], "", "Show only unblocked operators.", false);
+        pagcor.AddArgument(["--refresh"], "", "Bypass the 7-day PAGCOR PDF cache.", false);
         // Every option has a default, so a bare `sipat pagcor` should run
         // rather than fall back to printing usage.
         pagcor.ArgumentZeroAction = ArgSharpClass.ArgZeroAction.TreatAsSuccess;
@@ -81,10 +83,19 @@ public static class Program
         cache.AddArgument(["--clear"], "", "Delete all cached files.", false);
         cache.ArgumentZeroAction = ArgSharpClass.ArgZeroAction.TreatAsSuccess;
 
-        var emit = ArgSharpClass.AddArgumentAction(["emit"],
-            () => run = () => NotImplemented("emit"),
+        ArgInvoke emit = null!;
+        emit = ArgSharpClass.AddArgumentAction(["emit"],
+            () => run = () => EmitCommand.RunAsync(
+                RepoRoot(),
+                emit.GetValue<string>("--domains"),
+                emit.GetValue<string>("--file"),
+                emit.GetValue<bool>("--pagcor"),
+                emit.GetValue<bool>("--dry-run")),
             "Append confirmed domains to the three blocklists.");
-        emit.AddArgument(["--domains", "-d"], "CSV", "Comma-separated domains.", "");
+        emit.AddArgument(["--domains", "-d"], "CSV", "Comma-separated domains or URLs.", "");
+        emit.AddArgument(["--file", "-f"], "PATH", "File with one domain per line (# comments).", "");
+        emit.AddArgument(["--pagcor"], "", "Insert into the PAGCOR-regulated section instead of POGO/illegal.", false);
+        emit.AddArgument(["--dry-run", "-n"], "", "Show what would be written without touching the files.", false);
 
         if (!ArgSharpClass.Parse(args)) return 1;
         if (run is null) return 0;   // --help or no subcommand; ArgSharp printed usage.
@@ -98,12 +109,6 @@ public static class Program
             AnsiConsole.MarkupLine($"[red]error:[/] {Markup.Escape(ex.Message)}");
             return 1;
         }
-    }
-
-    private static Task<int> NotImplemented(string name)
-    {
-        AnsiConsole.MarkupLine($"[yellow]{name}[/] is not implemented yet.");
-        return Task.FromResult(2);
     }
 
     /// <summary>Repo root, so the tool works when run from sipat/ or from the root.</summary>

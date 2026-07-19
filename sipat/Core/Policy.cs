@@ -8,11 +8,15 @@ namespace Sipat.Core;
 public static class Policy
 {
     /// <summary>
-    /// Philippine government domains. A failed /goto/ redirect or a sinkhole
-    /// match must never turn into a blocklist entry for the government host
-    /// doing the blocking.
+    /// Philippine government domains, and the regulator's own site (which
+    /// appears throughout its PDFs). A failed /goto/ redirect, a sinkhole
+    /// match, or a PDF header must never turn into a blocklist entry for the
+    /// institutions doing the regulating.
     /// </summary>
     public static bool IsNeverBlock(string domain) =>
-        domain.Equals("gov.ph", StringComparison.OrdinalIgnoreCase) ||
-        domain.EndsWith(".gov.ph", StringComparison.OrdinalIgnoreCase);
+        IsOrUnder(domain, "gov.ph") || IsOrUnder(domain, "pagcor.ph");
+
+    private static bool IsOrUnder(string domain, string root) =>
+        domain.Equals(root, StringComparison.OrdinalIgnoreCase) ||
+        domain.EndsWith("." + root, StringComparison.OrdinalIgnoreCase);
 }

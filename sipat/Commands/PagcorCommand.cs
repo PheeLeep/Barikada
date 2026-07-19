@@ -9,13 +9,15 @@ namespace Sipat.Commands;
 /// </summary>
 public static class PagcorCommand
 {
-    public static async Task<int> RunAsync(string repoRoot, int concurrency, bool missingOnly)
+    public static async Task<int> RunAsync(string repoRoot, int concurrency, bool missingOnly, bool refresh)
     {
         using var http = HttpFactory.Create();
         var cicc = new CiccClient(http);
 
         IReadOnlyList<CiccOperator> roster = [];
         Blocklist? blocklist = null;
+        PagcorPdfResult? pdf = null;
+        string? pdfError = null;
 
         await AnsiConsole.Status()
             .Spinner(Spinner.Known.Dots)
@@ -25,6 +27,10 @@ public static class PagcorCommand
 
                 ctx.Status($"Resolving {roster.Count} /goto/ redirects...");
                 await cicc.ResolveDomainsAsync(roster, concurrency);
+
+                ctx.Status("Fetching PAGCOR provider PDF...");
+                try { pdf = await PagcorPdf.LoadAsync(http, refresh); }
+                catch (Exception e) { pdfError = e.Message; }
 
                 ctx.Status("Reading Barikada blocklist...");
                 blocklist = await Blocklist.LoadAsync(repoRoot, http);
@@ -82,13 +88,68 @@ public static class PagcorCommand
             AnsiConsole.MarkupLine($"  [blue]./add_scatters.sh[/] {Markup.Escape(csv.Replace(",", " "))}");
         }
 
+        ReportPdf(pdf, pdfError, roster, blocklist);
         return 0;
+    }
+
+    /// <summary>
+    /// The PDF is the breadth source (every registered URL per licensee) but a
+    /// dated snapshot — its "as of" date is always shown, and freshness is
+    /// judged by how much of the live CICC roster it already knows about.
+    /// </summary>
+    private static void ReportPdf(
+        PagcorPdfResult? pdf, string? pdfError, IReadOnlyList<CiccOperator> roster, Blocklist blocklist)
+    {
+        AnsiConsole.WriteLine();
+        AnsiConsole.Write(new Rule("[bold]PAGCOR provider PDF[/]").LeftJustified().RuleStyle("grey"));
+
+        if (pdf is null)
+        {
+            AnsiConsole.MarkupLine($"[yellow]unavailable:[/] {Markup.Escape(pdfError ?? "unknown error")}");
+            return;
+        }
+
+        var asOf = pdf.AsOf?.ToString("dd MMMM yyyy") ?? "unknown date";
+        var ageMonths = pdf.AsOf is { } asOfDate
+            ? (DateOnly.FromDateTime(DateTime.UtcNow).DayNumber - asOfDate.DayNumber) / 30
+            : (int?)null;
+
+        AnsiConsole.MarkupLine(
+            $"  [grey]as of:[/] {asOf}" +
+            (ageMonths is > 6 ? $" [yellow](~{ageMonths} months old)[/]" : "") +
+            $"   [grey]registered domains:[/] {pdf.Domains.Count}   [grey]source:[/] {Markup.Escape(pdf.Provenance)}");
+
+        // How stale is the snapshot, measured against the live roster?
+        var ciccDomains = roster.Where(o => o.Domain is not null).Select(o => o.Domain!).ToList();
+        var unknownToPdf = ciccDomains.Count(cd => !pdf.Domains.Contains(cd) &&
+            !pdf.Domains.Any(p => cd.EndsWith("." + p, StringComparison.OrdinalIgnoreCase)));
+        if (unknownToPdf > 0)
+            AnsiConsole.MarkupLine(
+                $"  [yellow]{unknownToPdf}[/] of {ciccDomains.Count} live CICC operator domains are absent " +
+                "from the PDF — expected for a stale snapshot; trust CICC for those");
+
+        var uncovered = pdf.Domains
+            .Where(d => !blocklist.Covers(d))
+            .OrderBy(d => d, StringComparer.Ordinal)
+            .ToList();
+
+        if (uncovered.Count == 0)
+        {
+            AnsiConsole.MarkupLine("  [green]every PDF-registered domain is already covered by the blocklist[/]");
+            return;
+        }
+
+        AnsiConsole.MarkupLine($"  [red]{uncovered.Count}[/] registered domain(s) not covered:");
+        foreach (var d in uncovered)
+            AnsiConsole.MarkupLine($"    {Markup.Escape(d)}");
+        AnsiConsole.MarkupLine(
+            $"  [grey]Add with:[/] [blue]./add_scatters.sh[/] {Markup.Escape(string.Join(" ", uncovered))}");
     }
 
     private enum State { Blocked, Missing, Unresolved }
 
     private static State Classify(CiccOperator op, Blocklist list) =>
         op.Domain is null ? State.Unresolved
-        : list.Contains(op.Domain) ? State.Blocked
+        : list.Covers(op.Domain) ? State.Blocked
         : State.Missing;
 }

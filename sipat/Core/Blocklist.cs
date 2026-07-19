@@ -45,6 +45,21 @@ public sealed partial class Blocklist
 
     public bool Contains(string domain) => _domains.Contains(domain);
 
+    /// <summary>
+    /// True when the domain or any parent of it is listed — uBlock's
+    /// <c>||domain^</c> and uBlacklist's <c>*://*.domain/*</c> cover
+    /// subdomains implicitly, so <c>play.bingoplus.com</c> is covered by a
+    /// <c>bingoplus.com</c> entry.
+    /// </summary>
+    public bool Covers(string domain)
+    {
+        if (_domains.Contains(domain)) return true;
+        for (var i = domain.IndexOf('.'); i >= 0; i = domain.IndexOf('.', i + 1))
+            if (_domains.Contains(domain[(i + 1)..]))
+                return true;
+        return false;
+    }
+
     /// <summary>Source the load actually came from, for display.</summary>
     public string Source { get; private init; } = "";
 

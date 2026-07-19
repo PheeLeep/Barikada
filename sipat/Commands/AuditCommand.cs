@@ -13,6 +13,8 @@ public static class AuditCommand
 {
     private sealed record Entry(int LineNo, string Raw, string? Normalized);
 
+    private enum SiteCategory { Pagcor, Pogo }
+
     private sealed class FileAudit
     {
         public required ListKind Kind { get; init; }
@@ -22,6 +24,7 @@ public static class AuditCommand
         public List<(string Domain, int Count)> Duplicates { get; } = [];
         public List<string> Suspicious { get; } = [];
         public HashSet<string> Domains { get; } = new(StringComparer.OrdinalIgnoreCase);
+        public Dictionary<string, SiteCategory> Categories { get; } = new(StringComparer.OrdinalIgnoreCase);
     }
 
     public static async Task<int> RunAsync(string repoRoot, bool dns, int concurrency)
@@ -37,6 +40,8 @@ public static class AuditCommand
             }
             audits.Add(AuditFile(kind, file, await File.ReadAllLinesAsync(path)));
         }
+
+        ReportSummary(audits);
 
         var findings = 0;
         findings += ReportPerFile(audits);
@@ -63,10 +68,22 @@ public static class AuditCommand
         var commentPrefix = kind == ListKind.UBlock ? '!' : '#';
         var rawCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
+        // Each list opens with the PAGCOR-regulated section; a "POGO" section
+        // header switches every entry after it to the offshore bucket.
+        var category = SiteCategory.Pagcor;
+
         for (var i = 0; i < lines.Length; i++)
         {
             var line = lines[i].Trim();
-            if (line.Length == 0 || line[0] == commentPrefix) continue;
+            if (line.Length == 0) continue;
+            if (line[0] == commentPrefix)
+            {
+                if (line.Contains("POGO", StringComparison.OrdinalIgnoreCase))
+                    category = SiteCategory.Pogo;
+                else if (line.Contains("PAGCOR", StringComparison.OrdinalIgnoreCase))
+                    category = SiteCategory.Pagcor;
+                continue;
+            }
 
             // uBlacklist carries a YAML frontmatter block the parser must not
             // count as malformed.
@@ -95,6 +112,7 @@ public static class AuditCommand
             else
             {
                 audit.Domains.Add(normalized);
+                audit.Categories.TryAdd(normalized, category);
 
                 // Real TLDs are alphabetic (or punycode xn--). A hyphen or
                 // digit in the final label means a mangled entry, e.g.
@@ -111,15 +129,77 @@ public static class AuditCommand
         return audit;
     }
 
+    /// <summary>
+    /// Category totals over the union of the three lists (hosts carries www.
+    /// variants, so per-file counts would double-count the same site).
+    /// </summary>
+    private static void ReportSummary(List<FileAudit> audits)
+    {
+        var categories = new Dictionary<string, SiteCategory>(StringComparer.OrdinalIgnoreCase);
+        foreach (var a in audits)
+            foreach (var (domain, category) in a.Categories)
+                categories.TryAdd(domain, category);
+
+        var total = categories.Count;
+        var pagcor = categories.Count(kv => kv.Value == SiteCategory.Pagcor);
+        var pogo = total - pagcor;
+
+        static string Ratio(int n, int total) =>
+            total == 0 ? "-" : $"{n}/{total} ({100.0 * n / total:0.0}%)";
+
+        var table = new Table()
+            .Border(TableBorder.Rounded)
+            .BorderColor(Color.Grey)
+            .Title("[bold]:bar_chart: Summary[/]");
+        table.AddColumn("Category");
+        table.AddColumn(new TableColumn("Domains").RightAligned());
+        table.AddColumn(new TableColumn("Ratio").RightAligned());
+
+        table.AddRow(":slot_machine: Total gambling sites", $"[bold]{total}[/]", "");
+        table.AddRow(":classical_building: PAGCOR-licensed", pagcor.ToString(), Ratio(pagcor, total));
+        table.AddRow(":globe_showing_asia_australia: POGO (offshore)", pogo.ToString(), Ratio(pogo, total));
+
+        AnsiConsole.Write(table);
+        AnsiConsole.WriteLine();
+    }
+
     private static int ReportPerFile(List<FileAudit> audits)
     {
         var findings = 0;
 
+        var overview = new Table()
+            .Border(TableBorder.Rounded)
+            .BorderColor(Color.Grey)
+            .Title("[bold]:clipboard: Blocklists[/]");
+        overview.AddColumn("File");
+        overview.AddColumn(new TableColumn("Entries").RightAligned());
+        overview.AddColumn(new TableColumn("Unique domains").RightAligned());
+        overview.AddColumn(new TableColumn("Malformed").RightAligned());
+        overview.AddColumn(new TableColumn("Duplicates").RightAligned());
+        overview.AddColumn(new TableColumn("Suspicious").RightAligned());
+
         foreach (var a in audits)
         {
+            var suspicious = a.Suspicious.Distinct().Count();
+            overview.AddRow(
+                Markup.Escape(a.FileName),
+                a.Entries.Count.ToString(),
+                a.Domains.Count.ToString(),
+                a.Malformed.Count == 0 ? "[green]0[/]" : $"[red]{a.Malformed.Count}[/]",
+                a.Duplicates.Count == 0 ? "[green]0[/]" : $"[yellow]{a.Duplicates.Count}[/]",
+                suspicious == 0 ? "[green]0[/]" : $"[orange1]{suspicious}[/]");
+            findings += a.Malformed.Count + a.Duplicates.Count + suspicious;
+        }
+
+        AnsiConsole.Write(overview);
+        AnsiConsole.WriteLine();
+
+        foreach (var a in audits)
+        {
+            if (a.Malformed.Count == 0 && a.Duplicates.Count == 0 && a.Suspicious.Count == 0)
+                continue;
+
             AnsiConsole.Write(new Rule($"[bold]{a.FileName}[/]").LeftJustified().RuleStyle("grey"));
-            AnsiConsole.MarkupLine(
-                $"  [grey]entries:[/] {a.Entries.Count}   [grey]unique domains:[/] {a.Domains.Count}");
 
             foreach (var (lineNo, line) in a.Malformed)
                 AnsiConsole.MarkupLine($"  [red]malformed[/] line {lineNo}: {Markup.Escape(line)}");
@@ -130,7 +210,6 @@ public static class AuditCommand
             foreach (var raw in a.Suspicious.Distinct())
                 AnsiConsole.MarkupLine($"  [orange1]suspicious[/]: {Markup.Escape(raw)}");
 
-            findings += a.Malformed.Count + a.Duplicates.Count + a.Suspicious.Distinct().Count();
             AnsiConsole.WriteLine();
         }
 
@@ -255,10 +334,16 @@ public static class AuditCommand
 
         gate.Dispose();
 
-        AnsiConsole.Write(new Rule("[bold]DNS health (informational)[/]").LeftJustified().RuleStyle("grey"));
-        AnsiConsole.MarkupLine(
-            $"  [red]{sinkholed}[/] CICC-sinkholed   [yellow]{live}[/] live (not CICC-blocked)   " +
-            $"[grey]{dead}[/] dead   {errors} errors   [grey]canaries {canaryHits}/{Sinkhole.Canaries.Length}[/]");
+        AnsiConsole.Write(new Rule($"[bold]DNS health (informational)[/] ([grey]canaries {canaryHits}/{Sinkhole.Canaries.Length}[/])").LeftJustified().RuleStyle("grey"));
+
+        var table = new Table().Border(TableBorder.Rounded).BorderColor(Color.Grey);
+        table.AddColumn("Status");
+        table.AddColumn(new TableColumn("Domains").RightAligned());
+        table.AddRow(":prohibited: CICC-sinkholed", $"[red]{sinkholed}[/]");
+        table.AddRow(":green_circle: Live (not CICC-blocked)", $"[yellow]{live}[/]");
+        table.AddRow(":skull: Dead links", $"[grey]{dead}[/]");
+        table.AddRow(":warning: Errors during lookup", errors.ToString());
+        AnsiConsole.Write(table);
 
         if (deadList.Count > 0)
         {
