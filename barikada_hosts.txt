@@ -757,7 +757,11 @@
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
 
-# (updated Last October 25, 2025)
+# (updated Last July 19, 2026)
+0.0.0.0 bosscat.ph
+0.0.0.0 789bingo.com
+0.0.0.0 crazywingo.ph
+0.0.0.0 ptgaming.ph
 0.0.0.0 ph369tp.com
 0.0.0.0 reebet88.vip
 0.0.0.0 jl128share.com
