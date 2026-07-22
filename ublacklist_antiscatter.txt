@@ -409,7 +409,13 @@ name: PheeLeep's Barikada Anti Scatter List
 
 # Illegal PH Gambling Sites. 
 # POGO (Philippine Offshore Gaming Operation) related.
-# (updated Last July 19, 2026)
+# (updated Last July 23, 2026)
+*://*.bet160.one/*
+*://*.bet160.tv/*
+*://*.phbet160.com/*
+*://*.bet160.org/*
+*://*.bet160.site/*
+*://*.arlvento.com/*
 *://*.bosscat.ph/*
 *://*.789bingo.com/*
 *://*.crazywingo.ph/*

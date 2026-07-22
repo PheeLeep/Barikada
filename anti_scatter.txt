@@ -408,7 +408,13 @@
 ! Illegal PH Gambling Sites. 
 ! POGO (Philippine Offshore Gaming Operation) related.
 
-! (updated Last July 19, 2026)
+! (updated Last July 23, 2026)
+||bet160.one^$all
+||bet160.tv^$all
+||phbet160.com^$all
+||bet160.org^$all
+||bet160.site^$all
+||arlvento.com^$all
 ||bosscat.ph^$all
 ||789bingo.com^$all
 ||crazywingo.ph^$all
